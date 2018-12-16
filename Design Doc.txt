@@ -10,3 +10,31 @@ Logistics
 Build warehouses, trucks etc.
 setup routes, assign vehicles to routes and timetable them.
 
+start in a town as a small business
+acquire supplies from local wholesalers and sell them on for profit.
+wholesale price is based on external economy
+player cannot yet see.
+
+Select type of business
+logging - carpentry - furniture shop
+logistics
+building
+mining
+manufacturing
+    -plastics
+    -cars
+    -lorries
+    -trains
+    -toys
+    -clothing
+    -electronics
+utilities
+smelting
+jewels
+events
+oil, fuel
+shop chain
+carpentry
+
+
+

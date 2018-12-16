@@ -3,7 +3,6 @@
 //
 
 #include "People.h"
-#include <string>
 
 int person = 0;
 

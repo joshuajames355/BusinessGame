@@ -5,6 +5,7 @@
 #ifndef BUSINESSGAME_PEOPLE_H
 #define BUSINESSGAME_PEOPLE_H
 
+#include <String>
 
 class People {
 public:
