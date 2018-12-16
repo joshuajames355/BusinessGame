@@ -1,6 +1,6 @@
 #include "main.h"
 
-void main()
+int main()
 {
 	sf::Window window(sf::VideoMode(800, 600), "My window");
 
@@ -15,4 +15,5 @@ void main()
 				window.close();
 		}
 	}
+	return 0;
 }
