@@ -1,0 +1,12 @@
+Procedurally Generated world.
+Some sort of tech tree or equivilant.
+Compete against other companies.
+Prices for all items based on market forces, supply/demand.
+
+
+Logistics
+---------
+
+Build warehouses, trucks etc.
+setup routes, assign vehicles to routes and timetable them.
+
