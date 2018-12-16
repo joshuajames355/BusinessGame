@@ -1,4 +1,4 @@
-set(gameSources src/main.cpp)
+file(GLOB gameSources "src/*.cpp")
 file(GLOB gameHeaders "include/*.h")
 
 add_executable(game ${gameSources} ${gameHeaders})
