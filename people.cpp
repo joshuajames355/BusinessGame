@@ -11,10 +11,11 @@ People::People() {
     person++
 }
 
-people::id() {
+People::id() {
     return person;
 }
 
-people::toString() {
-    return ("#%d", person);
+People::toString() {
+    return "#" + person;
 }
+

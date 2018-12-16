@@ -6,7 +6,7 @@
 #define BUSINESSGAME_PEOPLE_H
 
 
-class people {
+class People {
 public:
     People();
 
