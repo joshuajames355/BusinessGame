@@ -1,0 +1,12 @@
+dist: trusty
+sudo: require
+language:
+  - cpp
+compiler:
+  - gcc
+before_install:
+  - sudo bash setup.sh
+addons:
+  apt:
+    update: true
+ script: make build; cd build; cmake -G "Unix Makefiles" ..; make game
