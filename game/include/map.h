@@ -1,9 +1,20 @@
 #pragma once
-#include <array>
+#include <vector>
 #include "mapTile.h"
 #include "SFML/Graphics.hpp"
+#include <stdio.h>     
+#include <stdlib.h>    
+#include <time.h>
+#include <iostream>
 
 class TextureLoader;
+
+struct BiomeInfo
+{
+	int x;
+	int y; //Center of biome
+	Biome biomeType;
+};
 
 class Map
 {

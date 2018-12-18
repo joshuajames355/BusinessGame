@@ -4,7 +4,7 @@
 #include <array>
 #include <iostream>
 
-enum TextureID{grass ,NUM_TEXTURES};
+enum TextureID{grassTile, desertTile ,NUM_TEXTURES};
 
 class TextureLoader
 {

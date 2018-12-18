@@ -8,17 +8,14 @@ int main()
 	TextureLoader textureLoader;
 
 	//Camera positions
-	int x = 20;
-	int y = 20;
+	int x = 75;
+	int y = 75;
 
 	sf::Vector2i mousePos = sf::Mouse::getPosition();
 	sf::Vector2i currentMousePos, difference;
 
 	Map map;
-	map.generateMap(10, 10, &textureLoader);
-
-	sf::Sprite testSprite;
-	testSprite.setTexture(*textureLoader.getTexture(grass));
+	map.generateMap(50, 50, &textureLoader);
 
 	while (window.isOpen())
 	{

@@ -2,7 +2,8 @@
 
 TextureLoader::TextureLoader()
 {
-	loadImage(grass, "grasslandsBase.png");
+	loadImage(grassTile, "grasslandsBase.png");
+	loadImage(desertTile, "desertBase.png");
 }
 
 void TextureLoader::loadImage(TextureID textureID, std::string filename)
