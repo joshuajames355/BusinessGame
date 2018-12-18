@@ -18,7 +18,7 @@ TextureID biomeToTextureID(Biome biome)
 	switch (biome)
 	{
 	case tundra:
-		return grassTile; //Not implemented
+		return tundraTile; //Not implemented
 		break;
 	case grasslands:
 		return grassTile;

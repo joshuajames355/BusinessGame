@@ -16,7 +16,8 @@ void Map::generateMap(int newWidth, int newHeight, TextureLoader* textureLoader)
 	srand(time(NULL)); //Seeds rand
 
 	//Generates a list of biomeInfo points randomly
-	int NUM_BIOMES = rand() % (width*height / 40) + 3; //The maximun number of biomes is proportional to the size of the map
+	int NUM_BIOMES = rand() % (width*height / 750) + 3; //The maximun number of biomes is proportional to the size of the map
+	std::cout << "Generating " << NUM_BIOMES << " Biomes" << std::endl;
 	std::vector<BiomeInfo> biomes;
 	biomes.reserve(NUM_BIOMES);
 	BiomeInfo newBiome;
@@ -24,11 +25,14 @@ void Map::generateMap(int newWidth, int newHeight, TextureLoader* textureLoader)
 	{
 		int randomChoice = rand() % 10;
 		
-		if (randomChoice < 7) newBiome.biomeType = grasslands; //70% of desert, 30% desert
+		if (randomChoice < 6) newBiome.biomeType = grasslands; //60% of grasslands, 20% desert, 20% tundra
+		else if(randomChoice < 8) newBiome.biomeType = tundra;
 		else newBiome.biomeType = desert;
 
 		newBiome.x = rand() % width;
 		newBiome.y = rand() % height;
+
+		std::cout << "New centre. X: " << newBiome.x << " Y: " << newBiome.y << " Type: " << newBiome.biomeType << std::endl;
 
 		biomes.push_back(newBiome);
 	}
@@ -62,16 +66,16 @@ MapTile * Map::getMapTile(int x, int y)
 	return &map[y*width + x];
 }
 
-void Map::render(float x, float y, sf::RenderWindow * window)
+void Map::render(float x, float y, float zoom, sf::RenderWindow * window)
 {
-	int squareWidth = 128;
+	int squareWidth = 32 + zoom*192;
 	int squareHeight = squareWidth / 2;
 	for (int xCoord = 0; xCoord < width; xCoord++)
 	{
 		for (int yCoord = 0; yCoord < height; yCoord++)
 		{
-			if (yCoord % 2 == 0) getMapTile(xCoord, yCoord)->render(window, xCoord*squareWidth/2 + x, yCoord*squareHeight / 4 + y, 64);
-			else getMapTile(xCoord, yCoord)->render(window, xCoord*squareWidth/2 + squareWidth / 4 + x, yCoord*squareHeight / 4 + y, 64);
+			if (yCoord % 2 == 0) getMapTile(xCoord, yCoord)->render(window, xCoord*squareWidth + x, yCoord*squareHeight / 2 + y, squareWidth);
+			else getMapTile(xCoord, yCoord)->render(window, xCoord*squareWidth + squareWidth/2 + x, yCoord*squareHeight / 2 + y, squareWidth);
 		}
 	}
 }
