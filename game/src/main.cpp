@@ -1,6 +1,7 @@
 #include "main.h"
 
 const int SENSITIVITY = 1;
+const float ZOOM_SENSITIVITY = 0.05;
 
 int main()
 {
@@ -8,14 +9,15 @@ int main()
 	TextureLoader textureLoader;
 
 	//Camera positions
-	int x = 75;
-	int y = 75;
+	int x = 150;
+	int y = 150;
+	float zoom = 0.5;
 
 	sf::Vector2i mousePos = sf::Mouse::getPosition();
 	sf::Vector2i currentMousePos, difference;
 
 	Map map;
-	map.generateMap(50, 50, &textureLoader);
+	map.generateMap(100, 150, &textureLoader);
 
 	while (window.isOpen())
 	{
@@ -26,6 +28,13 @@ int main()
 			// "close requested" event: we close the window
 			if (event.type == sf::Event::Closed)
 				window.close();
+			if (event.type == sf::Event::MouseWheelScrolled)
+			{
+				if (event.mouseWheelScroll.wheel == sf::Mouse::VerticalWheel)
+				{
+					zoom = std::min(1.0f, std::max(0.0f, zoom + event.mouseWheelScroll.delta * ZOOM_SENSITIVITY));
+				}
+			}
 		}
 
 
@@ -39,7 +48,7 @@ int main()
 
 		window.clear(sf::Color::Black);
 
-		map.render(x,y,&window);
+		map.render(x,y,zoom,&window);
 
 		window.display();
 		mousePos = currentMousePos;

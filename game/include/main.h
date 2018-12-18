@@ -3,3 +3,4 @@
 #include "SFML/Graphics.hpp"
 #include "textureLoader.h"
 #include "map.h"
+#include <algorithm>

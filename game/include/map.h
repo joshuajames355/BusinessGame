@@ -23,7 +23,7 @@ public:
 	~Map();
 	void generateMap(int newWidth, int newHeight, TextureLoader* textureLoader);
 	MapTile* getMapTile(int x, int y);
-	void render(float x, float y, sf::RenderWindow* window); //x and y are camera positions.
+	void render(float x, float y, float zoom, sf::RenderWindow* window); //x and y are camera positions. Zoom is between 0 and 1
 
 
 private:
