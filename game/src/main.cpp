@@ -1,8 +1,24 @@
 #include "main.h"
 
+const int SENSITIVITY = 1;
+
 int main()
 {
-	sf::Window window(sf::VideoMode(800, 600), "My window");
+	sf::RenderWindow window(sf::VideoMode(800, 600), "Business Game");
+	TextureLoader textureLoader;
+
+	//Camera positions
+	int x = 20;
+	int y = 20;
+
+	sf::Vector2i mousePos = sf::Mouse::getPosition();
+	sf::Vector2i currentMousePos, difference;
+
+	Map map;
+	map.generateMap(10, 10, &textureLoader);
+
+	sf::Sprite testSprite;
+	testSprite.setTexture(*textureLoader.getTexture(grass));
 
 	while (window.isOpen())
 	{
@@ -14,6 +30,22 @@ int main()
 			if (event.type == sf::Event::Closed)
 				window.close();
 		}
+
+
+		currentMousePos = sf::Mouse::getPosition();
+		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+		{
+			difference = currentMousePos - mousePos;
+			x += difference.x * SENSITIVITY;
+			y += difference.y * SENSITIVITY;
+		}
+
+		window.clear(sf::Color::Black);
+
+		map.render(x,y,&window);
+
+		window.display();
+		mousePos = currentMousePos;
 	}
 	return 0;
 }

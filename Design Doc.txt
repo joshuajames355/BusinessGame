@@ -1,8 +1,12 @@
-Procedurally Generated world.
+Procedurally Generated 2.5d
 Some sort of tech tree or equivilant.
 Compete against other companies.
 Prices for all items based on market forces, supply/demand.
 
+start in a town as a small business
+acquire supplies from local wholesalers and sell them on for profit.
+wholesale price is based on external economy that the player cannot yet see.
+Could have random events that effect pricing.
 
 Logistics
 ---------
@@ -10,10 +14,9 @@ Logistics
 Build warehouses, trucks etc.
 setup routes, assign vehicles to routes and timetable them.
 
-start in a town as a small business
-acquire supplies from local wholesalers and sell them on for profit.
-wholesale price is based on external economy
-player cannot yet see.
+
+Types of locations
+------------------
 
 Select type of business
 logging - carpentry - furniture shop
@@ -36,5 +39,19 @@ oil, fuel
 shop chain
 carpentry
 
+Map gen stuff
+-------------
+
+Each map tile has the following properties
+Biome (Tundra, Grassland, Desert)
+Building (Road, House, LoggingCompany, 
+
+convention
+----------
+
+classNames and types start with capital letters.
+functions and variables start with lower letters.
+Both of the above in camel case.
+constants are in all caps w/ snake_case.
 
 
