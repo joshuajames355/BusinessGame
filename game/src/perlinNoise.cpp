@@ -11,8 +11,8 @@ float dotGridGradient(int x, int y, int gridX, int gridY, int seed)
 	const float gradX = prng(gridX, gridY, seed);
 	const float gradY = sqrt(1 - gradX * gradX);
 
-	const int dx = x - gridX * GRID_SIZE;
-	const int dy = y - gridY * GRID_SIZE;
+	const float dx = (float)x / (float)GRID_SIZE - gridX;
+	const float dy = (float)y / (float)GRID_SIZE - gridY;
 
 	return gradX * dx + gradY * dy;
 }
@@ -55,7 +55,7 @@ sf::Texture debugGenerateTextureFromNoise(int width, int height, int seed)
 	int counter = 0;
 	while (counter < width * height * 4)
 	{
-		float perlinValue = noise((counter/4) % width, (counter/4) / width, seed) *128 + 128;
+		float perlinValue = noise((counter / 4) % width, (counter / 4) / width, seed) *128 + 128;
 		pixels[counter] = perlinValue;
 		pixels[counter + 1] = perlinValue;
 		pixels[counter + 2] = perlinValue;
